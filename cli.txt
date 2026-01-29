@@ -1,0 +1,4 @@
+npx create-next-app@latest .
+npm run dev
+npm install --save-dev tw-animate-css
+npx shadcn@latest add @react-bits/LightRays-JS-CSS
