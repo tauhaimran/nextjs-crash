@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Schibsted_Grotesk, Martian_Mono } from "next/font/google";
 import "./globals.css";
+import LightRays from "./components/LightRays";
 
 const schibstedGrotesk = Schibsted_Grotesk({
   variable: "--font-schibsted-grotesk",
@@ -27,7 +28,29 @@ export default function RootLayout({
       <body
         className={`${schibstedGrotesk.variable} ${martianMono.variable} min-h-screen antialiased`}
       >
+
+        <div className = "absolute inset-0 top-0 z-[-1]" >
+          <LightRays
+            raysOrigin="top-center-offset"
+            raysColor="#5dfeca"
+            raysSpeed={1}
+            lightSpread={0.75}
+            rayLength={200}
+            followMouse={true}
+            mouseInfluence={0.1}
+            noiseAmount={0.05}
+            distortion={0.05}
+            className="custom-rays"
+            pulsating={false}
+            fadeDistance={1}
+            saturation={1}
+        />
+        </div>
+
+        <main>
         {children}
+        </main>
+        
       </body>
     </html>
   );
